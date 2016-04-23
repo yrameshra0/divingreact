@@ -22,5 +22,11 @@
     "react-dom": "^15.0.1",
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.3",
+    "esformatter": "^0.9.3",
+    "esformatter-jsx": "^5.0.0",
+    "eslint": "^2.8.0"
   }
 }
