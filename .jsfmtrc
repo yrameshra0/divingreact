@@ -1,0 +1,15 @@
+{
+  "preset": "jquery",
+  "plugins": [
+        "esformatter-quotes",
+        "esformatter-semicolons",
+        "esformatter-braces"
+    ],
+    "quotes": {
+        "type": "single",
+        "avoidEscape": false
+    },
+    "indent": {
+        "value": "    "  // four spaces, b.
+    }
+}
