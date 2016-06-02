@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Navigation from './Navigation';
-import NewsItem from './NewsItem';
+import Article from './Article';
 
 export default class Layout extends React.Component {
     navigate() {
@@ -9,19 +9,23 @@ export default class Layout extends React.Component {
     }
 
     render() {
+        const {location} = this.props;
+        const containerStyle = {
+            marginTop: '60px'
+        };
         return (
             <div>
-                <Navigation />
-                <p> </p><p> </p>
-                {this.props.children}
-                <h1> KillerNews.net  </h1>
-                <Link to='archives'>archives</Link> | 
-                <Link to='settings' activeClassName='test'>settings</Link> |
-                <button onClick={this.navigate.bind(this)}>featured</button>
-                <p> </p><p> </p>
-                <NewsItem title='Heading 1' />
-                <NewsItem title='Heading 2' />
-                <NewsItem title='Heading 3' />
+                <Navigation location={location}/>
+                <div class='container' style={containerStyle}>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+                            <h1> KillerNews.net  </h1>
+
+                                {this.props.children}
+
+                        </div>
+                    </div>
+                </div>
             </div>
             );
     }

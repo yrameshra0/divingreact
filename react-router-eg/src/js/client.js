@@ -14,7 +14,6 @@ ReactDom.render(
     		<IndexRoute component={Featured}></IndexRoute>
     		<Route path='archives/:article' component={Archives}> </Route>
     		<Route path='settings' component={Settings}> </Route>
-
     	</Route>
     </Router>,
     app);
