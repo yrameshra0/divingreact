@@ -4,13 +4,13 @@ import { expect } from 'chai';
 
 import Featured from '../../src/js/pages/Featured';
 
-describe('<Featured/>', function() {
-    it('Renders Artices', function() {
+describe('Featured Component', () => {
+    it('Renders Artices', () => {
         const wrapper = shallow(<Featured/>);
         expect(wrapper.find('Article')).to.have.length(4);
     });
 
-    it('Renders Ad Spot', function() {
+    it('Renders Random Text at Ad Spot', () => {
         const adText = [
             'Ad Spot #1',
             'Ad Spot #2',
