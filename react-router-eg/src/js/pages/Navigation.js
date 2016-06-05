@@ -1,22 +1,19 @@
 import React from 'react';
 import { IndexLink, Link } from 'react-router';
 
-export default class Navigation extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            collapsed: true,
+const Navigation = React.createClass({
+    getInitialState: function() {
+        return {
+            collapsed: true
         };
-    }
-
-    toggleCollapase() {
+    },
+    toggleCollapase: function() {
         const collapsed = !this.state.collapsed;
         this.setState({
             collapsed
         });
-        }
-
-    render() {
+    },
+    render: function() {
         const {location} = this.props;
         const {collapsed} = this.state;
         const featuredClass = location.pathname === '/' ? 'active' : '';
@@ -28,7 +25,7 @@ export default class Navigation extends React.Component {
             <div class='navbar navbar-default navbar-fixed-top' role='navigation'>
                 <div class='container'>
                     <div class='navbar-header'>
-                        <button type='button' class='navbar-toggle' onClick={this.toggleCollapase.bind(this)} >
+                        <button type='button' class='navbar-toggle' onClick={this.toggleCollapase} >
                             <span class='sr-only'> Toggle navigation </span>
                             <span class='icon-bar'></span>
                             <span class='icon-bar'></span>
@@ -38,13 +35,13 @@ export default class Navigation extends React.Component {
                     <div class={'navbar-collapse ' + navClass} id='newsNav'>
                     <ul class='nav navbar-nav'>
                         <li class={featuredClass}>
-                            <IndexLink to='/' onClick={this.toggleCollapase.bind(this)}>Featured</IndexLink>
+                            <IndexLink to='/' onClick={this.toggleCollapase}>Featured</IndexLink>
                         </li>
                         <li class={archivedClass}>
-                            <Link to='archives/somearticle' onClick={this.toggleCollapase.bind(this)}>Archives</Link>
+                            <Link to='archives/somearticle' onClick={this.toggleCollapase}>Archives</Link>
                         </li>
                         <li class={settingsClass}>
-                            <Link to='settings' onClick={this.toggleCollapase.bind(this)}>Settings</Link>
+                            <Link to='settings' onClick={this.toggleCollapase}>Settings</Link>
                         </li>
                     </ul>
                     </div>
@@ -52,4 +49,6 @@ export default class Navigation extends React.Component {
             </div>
             );
     }
-}
+});
+
+export default Navigation;
