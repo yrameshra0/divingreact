@@ -13,7 +13,7 @@ class SerachBar extends Component {
 
     render() {
         return (
-            <div>
+            <div className='search-bar'>
             <input
             value = {this.state.term}
             onChange={event => this.setState({
