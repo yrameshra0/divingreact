@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './youtube_page/search_bar';
 import VideoList from './youtube_page/video_list';
@@ -36,14 +36,14 @@ class App extends Component {
         }, 300);
 
         return (
-            <div> 
-    		<SearchBar onSearchTermChange={videoSearch}/>
-    		<VideoDetail video={this.state.selectedVideo} />
-    		<VideoList onVideoSelect={selectedVideo => this.setState({
-                selectedVideo
-            })} videos={this.state.videos} />
-     	</div>
-            );
+            <div>
+                <SearchBar onSearchTermChange={videoSearch}/>
+                <VideoDetail video={this.state.selectedVideo}/>
+                <VideoList onVideoSelect={selectedVideo => this.setState({
+                    selectedVideo
+                })} videos={this.state.videos}/>
+            </div>
+        );
     }
 }
 

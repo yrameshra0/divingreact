@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-
-class SerachBar extends Component {
+class SearchBar extends Component {
 
     constructor(props) {
         super(props);
@@ -14,11 +13,11 @@ class SerachBar extends Component {
     render() {
         return (
             <div className='search-bar'>
-            <input
-            value = {this.state.term}
-            onChange={event => this.onInputChange(event.target.value)} />
+                <input
+                    value={this.state.term}
+                    onChange={event => this.onInputChange(event.target.value)}/>
             </div>
-            );
+        );
     }
 
     onInputChange(term) {
@@ -29,4 +28,4 @@ class SerachBar extends Component {
     }
 }
 
-export default SerachBar;
+export default SearchBar;
