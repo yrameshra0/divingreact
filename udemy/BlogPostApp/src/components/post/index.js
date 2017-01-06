@@ -8,8 +8,13 @@ class PostIndex extends Component {
         this.props.fetchPosts();
     }
 
-    renderPost = (postData) => {
-        return <div>{postData}</div>
+    renderPost = (post) => {
+        return (
+            <div key={post.id}>
+                <div>Title : {post.title}</div>
+                <div>Cateogries : {post.categories}</div>
+            </div>
+        );
     };
 
     render() {
