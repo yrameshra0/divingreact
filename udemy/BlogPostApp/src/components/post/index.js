@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component } from 'react';
 import {fetchPosts} from '../../actions/index';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
@@ -8,7 +8,7 @@ class PostIndex extends Component {
         this.props.fetchPosts();
     }
 
-    renderPosts = (post) => {
+    renderPosts = () => {
         return this.props.posts.map((post) => {
                 return (
                     <li className="list-group-item post-link" key={post.id}>
@@ -34,7 +34,7 @@ class PostIndex extends Component {
 
                 <h3>Posts</h3>
                 <ul className="list-group">
-                    {this.renderPosts()}
+                    {this.renderPosts}
                 </ul>
             </div>
         );
