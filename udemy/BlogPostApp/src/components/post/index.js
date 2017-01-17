@@ -34,7 +34,7 @@ class PostIndex extends Component {
 
                 <h3>Posts</h3>
                 <ul className="list-group">
-                    {this.renderPosts}
+                    {this.renderPosts()}
                 </ul>
             </div>
         );
