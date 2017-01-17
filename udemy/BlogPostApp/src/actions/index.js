@@ -12,7 +12,6 @@ export const FETCH_POST = 'FETCH_POST';
     });
 })();
 
-
 const Posts = firebase.database().ref("posts");
 
 const transformToList = (mapObject) => {
