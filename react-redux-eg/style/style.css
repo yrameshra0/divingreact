@@ -1,0 +1,7 @@
+.todos-list{
+    list-style: none;
+}
+
+.todos-list li input{
+    margin-right: 10px;
+}
