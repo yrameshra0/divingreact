@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import TodoCreator from '../containers/TodoCreator';
-import TodoList from '../containers/TodoList';
+import TodoForm from '../containers/todo_form';
+import TodoList from '../containers/todo_list';
 
 export default () => {
     return (
         <div>
-            <TodoCreator/>
+            <TodoForm/>
             <br/>
             <TodoList/>
         </div>
