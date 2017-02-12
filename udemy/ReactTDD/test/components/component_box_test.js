@@ -4,7 +4,7 @@ import CommentBox from '../../src/components/comment_box';
 describe('Comment Box', () => {
     let component;
 
-    beforeEach(()=>{
+    beforeEach(() => {
         component = renderComponent(CommentBox);
     });
 
