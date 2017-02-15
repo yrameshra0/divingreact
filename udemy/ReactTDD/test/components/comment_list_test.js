@@ -5,10 +5,16 @@ describe('Comment List', () => {
     let component;
 
     beforeEach(() => {
-        component = renderComponent(CommentList);
+        const commentsProps = {'comments': ["New comment", "Other new comment"]};
+        component = renderComponent(CommentList, null, commentsProps);
     });
 
-    it('is usable', () => {
-        expect(component).to.exist;
+    it('shows an LI for each comment', () => {
+        expect(component.find('li').length).to.equal(2);
+    });
+
+    it('shows each comment that is provided', () => {
+        expect(component).to.contain("New comment");
+        expect(component).to.contain("Other new comment");
     });
 });
