@@ -4,17 +4,18 @@ import {connect} from 'react-redux';
 import signInAction from '../actions';
 class Header extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {"authenticated": false};
     }
 
-    handleAuthenticate = ()=>{
-        this.setState({'authenticated': !this.state.authenticated});
-        this.props.signInAction(this.state.authenticated)
+    handleAuthenticate = () => {
+        this.props.signInAction(!this.props.authenticated)
     };
 
     authButton() {
+        if (this.props.authenticated)
+            return <button onClick={this.handleAuthenticate}>Sign Out</button>;
+
         return <button onClick={this.handleAuthenticate}>Sign In</button>;
     }
 
@@ -37,10 +38,8 @@ class Header extends Component {
     }
 }
 
-function mapStateToProps(state){
-    console.log(state);
-
-    return state.authenticated;
+function mapStateToProps(state) {
+    return {authenticated: state.authenticated};
 }
 
 export default connect(mapStateToProps, {signInAction})(Header);
